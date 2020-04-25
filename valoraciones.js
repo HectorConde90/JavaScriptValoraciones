@@ -1,3 +1,5 @@
+
+
 let articles = {
     movies: [   { name: 'Pulp Fiction', score: 1 },
                 { name: 'Armageddon', score: 2 },
@@ -5,7 +7,7 @@ let articles = {
                 { name: 'Gladiator', score: 5 },
     ],
     
-    'series': [   { name: 'Breaking Bad', score: 5 },
+    'series': [ { name: 'Breaking Bad', score: 5 },
                 { name: 'House of Cards', score: 1 },
                 { name: 'Sons of Anarchy', score: 4 },
                 { name: 'Peaky Blinders', score: 4 },
@@ -16,7 +18,42 @@ const series = articles.series;
 const movies = articles.movies;
 
 
-//Imprimir el array resultante en la consola.
+
+// pedir al principio una pelicula una serie y su valoracion
+
+function introducirMaterial() {
+    let nuevaPelicula = { name: '', score: 0 };
+    let nuevaSerie = { name: '', score: 0 };
+
+
+    //Introduccion y valoracion de pelucula
+    nuevaPelicula.name = prompt('Introduce una nueva pelicula: ');
+    nuevaPelicula.score = parseInt(prompt(`Valora ${nuevaPelicula.name}`));
+
+    while (nuevaPelicula.score < 0 || nuevaPelicula.score > 5 || isNaN(nuevaPelicula.score)) {
+        nuevaPelicula.score = parseInt(prompt(`El valor debe estar entra 0 y 5`));
+    }
+
+     // Introduccion y valoracion de series
+    nuevaSerie.name = prompt('Introduce una nueva serie: ');
+    nuevaSerie.score = parseInt(prompt(`Valora ${nuevaSerie.name}`));
+
+    while (nuevaSerie.score < 0 || nuevaSerie.score > 5 || isNaN(nuevaSerie.score)) {
+        nuevaSerie.score = parseInt(prompt(`El valor debe estar entra 0 y 5`));
+    }
+
+    movies.push(nuevaPelicula);
+    series.push(nuevaSerie);
+
+
+}
+
+introducirMaterial();
+
+
+
+
+// Imprimir el array resultante en la consola.
 
 
 
@@ -83,6 +120,8 @@ document.write(listaMovies(movies));
 
 // IMPRIMIR POR PANTALLA MEJOR PELICULA Y MEJOR SERIE
 
+//Imprime mejor pelicula
+
 function mejorPelicula(pPelicula) {
     let masValor = 0;
     let pelicula = '';
@@ -90,6 +129,7 @@ function mejorPelicula(pPelicula) {
     for (let movie of pPelicula) {
         
         if (movie.score > masValor) {
+            masValor = movie.score;
             pelicula = movie.name;
         }
     }
@@ -102,7 +142,7 @@ function mejorPelicula(pPelicula) {
 
 document.write(mejorPelicula(movies));
 
-
+// Imprime mejor serie
 function mejorSerie(pSerie) {
     let masValor = 0;
     let serie = '';
@@ -110,6 +150,7 @@ function mejorSerie(pSerie) {
     for (let serieCount of pSerie) {
 
         if (serieCount.score > masValor) {
+            masValor = serieCount.score
             serie = serieCount.name;
         }
     }
@@ -146,45 +187,3 @@ function mostrarValorPedido() {
 
 
 
-// pedir al principio una pelicula una serie y su valoracion
-
-function introducirMaterial() {
-    let nuevaPelicula = { nombre: '', score: 0 };
-    let nuevaSerie = { nombre: '', score: 0 };
-    
-    
-    //Introduccion y valoracion de pelucula
-    nuevaPelicula.nombre = prompt('Introduce una nueva pelicula: '); 
-    nuevaPelicula.score = parseInt(prompt(`Valora ${nuevaPelicula.nombre}`));
-    
-    while (nuevaPelicula.score < 0 || nuevaPelicula.score > 5 || isNaN(nuevaPelicula.score)) {
-        nuevaPelicula.score = parseInt(prompt(`El valor debe estar entra 0 y 5`));
-    }
-    
-    
-    
-    // Introduccion y valoracion de series
-    nuevaSerie.nombre = prompt('Introduce una nueva serie: '); 
-    nuevaSerie.score = parseInt(prompt(`Valora ${nuevaSerie.nombre}`));
-
-    while (nuevaSerie.score < 0 || nuevaSerie.score > 5 || isNaN(nuevaSerie.score)) {
-        nuevaSerie.score = parseInt(prompt(`El valor debe estar entra 0 y 5`));
-   }
-    
-    
-    
-    
-    movies.push(nuevaPelicula);
-    series.push(nuevaSerie);
-
-
-    console.log(articles);
-  
-
-    
-
-
-    
-}
-
-introducirMaterial();
