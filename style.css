@@ -1,0 +1,42 @@
+.lista{
+    margin-top: 50px;
+}
+.lista h2{
+    color: blue;
+}
+
+.margin{
+    margin-left: 50px;
+    margin-right: 50px;
+    letter-spacing: 10px;
+    color: rgb(27, 27, 27);
+} 
+.margin:hover{
+    color: rgb(80, 76, 76);
+}
+
+/* .nav-bar{
+    height: 80px;
+} */
+
+.mejores {
+    margin-top: 80px;
+    
+}
+.mejores p {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 4px;
+    margin-top: 20px;
+    color: tomato;
+    text-decoration-line: underline;
+}
+
+.cont-princ{
+    padding-bottom: 40px;
+    border-bottom: 1px solid silver;
+}
+
+.br-navbar{
+    background-color: yellowgreen;
+}
