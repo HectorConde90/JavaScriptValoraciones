@@ -19,36 +19,36 @@ const movies = articles.movies;
 
 
 
-// pedir al principio una pelicula una serie y su valoracion
+//pedir al principio una pelicula una serie y su valoracion
 
-// function introducirMaterial() {
-//     let nuevaPelicula = { name: '', score: 0 };
-//     let nuevaSerie = { name: '', score: 0 };
-
-
-//     //Introduccion y valoracion de pelucula
-//     nuevaPelicula.name = prompt('Introduce una nueva pelicula: ');
-//     nuevaPelicula.score = parseInt(prompt(`Valora ${nuevaPelicula.name}`));
-
-//     while (nuevaPelicula.score < 0 || nuevaPelicula.score > 5 || isNaN(nuevaPelicula.score)) {
-//         nuevaPelicula.score = parseInt(prompt(`El valor debe estar entra 0 y 5`));
-//     }
-
-//      // Introduccion y valoracion de series
-//     nuevaSerie.name = prompt('Introduce una nueva serie: ');
-//     nuevaSerie.score = parseInt(prompt(`Valora ${nuevaSerie.name}`));
-
-//     while (nuevaSerie.score < 0 || nuevaSerie.score > 5 || isNaN(nuevaSerie.score)) {
-//         nuevaSerie.score = parseInt(prompt(`El valor debe estar entra 0 y 5`));
-//     }
-
-//     movies.push(nuevaPelicula);
-//     series.push(nuevaSerie);
+function introducirMaterial() {
+    let nuevaPelicula = { name: '', score: 0 };
+    let nuevaSerie = { name: '', score: 0 };
 
 
-// }
+    //Introduccion y valoracion de pelucula
+    nuevaPelicula.name = prompt('Introduce una nueva pelicula: ');
+    nuevaPelicula.score = parseInt(prompt(`Valora ${nuevaPelicula.name}`));
 
-// introducirMaterial();
+    while (nuevaPelicula.score < 0 || nuevaPelicula.score > 5 || isNaN(nuevaPelicula.score)) {
+        nuevaPelicula.score = parseInt(prompt(`El valor debe estar entra 0 y 5`));
+    }
+
+     // Introduccion y valoracion de series
+    nuevaSerie.name = prompt('Introduce una nueva serie: ');
+    nuevaSerie.score = parseInt(prompt(`Valora ${nuevaSerie.name}`));
+
+    while (nuevaSerie.score < 0 || nuevaSerie.score > 5 || isNaN(nuevaSerie.score)) {
+        nuevaSerie.score = parseInt(prompt(`El valor debe estar entra 0 y 5`));
+    }
+
+    movies.push(nuevaPelicula);
+    series.push(nuevaSerie);
+
+
+}
+
+introducirMaterial();
 
 
 
@@ -92,7 +92,7 @@ function listaMovies(pMovies) {
         if (movie.score === 5) {
             moviesDocument += `<li><strong style="color: green;"> ${movie.name},   ${movie.score} estrellas.</strong> </li>`;
         } else if (movie.score === 1) {
-            moviesDocument += `<li><strong style="color: red;">  ${movie.name},   ${movie.score} estrellas.</strong> </li>`;
+            moviesDocument += `<li><strong style="color: red;">  ${movie.name},   ${movie.score} estrella.</strong> </li>`;
         } else {
         
             moviesDocument += `<li> ${movie.name},   ${movie.score} estrellas.</li>`;
